@@ -445,6 +445,192 @@ public class A {
 -> To find size of an array dynamically we will use  public final field "length". When array is created this variable will get initiliazed
 Example : age.length
 
+Loops:
+
+a. for loop:
+
+Example 1:
+----------
+for(int i=0;i<5;i++) {//i=0 to 4
+   System.out.println(i);
+}
+
+
+Example 2:
+----------
+
+for(int i=0;i<=5;i++) {//i=0 to 5
+  System.out.println(i);
+}
+
+Example 3: loops with arrays
+---------------------------
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[4];
+		age[0] = 10;
+		age[1] = 20;
+		age[2] = 30;
+		age[3] = 40;
+		
+		for(int i=0;i<age.length;i++) {//i=0 to 3
+			System.out.println(age[i]);
+		}
+		
+		
+	}
+}
+
+Example 4: How to get only even numbers in an array
+---------------------------------------------------
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[4];
+		age[0] = 10;
+		age[1] = 21;
+		age[2] = 30;
+		age[3] = 43;
+		
+		for(int i=0;i<age.length;i++) {//i=0 to 3
+			if(age[i]%2==0) {
+				System.out.println(age[i]);
+			}
+		}
+		
+		
+	}
+}
+
+Example 5:
+----------
+for(int i=4;i>=0;i--) {//i=4 to 0
+   System.out.println(i);
+}
+
+Example 6:Print array in reverse order
+--------------------------------------
+
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[4];
+		age[0] = 10;
+		age[1] = 21;
+		age[2] = 30;
+		age[3] = 43;
+		
+		for(int i=age.length-1;i>=0;i--) {//i=3 to 0
+			System.out.println(age[i]);
+		}
+		
+		
+	}
+}
+
+Example 7:
+-----------
+-> for each loop is exclusively developed to read values of datastructure
+-> Iterating the loop is dynamic. That is the loop will run until all array values reading is not completed
+
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[5];
+		age[0] = 10;
+		age[1] = 21;
+		age[2] = 30;
+		age[3] = 43;
+		age[4] = 50;
+		
+		//foreach
+		for(int x:age) {
+			System.out.println(x);
+		}
+		
+	}
+}
+
+Example 8: If we donot iitialize array, then depending on data type default value will get stored in it:
+______________
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[5];
+			
+		//foreach
+		for(int x:age) {
+			System.out.println(x);
+		}
+		
+		
+	}
+}
+
+Example 9: An array with size ZERO can be created
+--------------------------------------------------
+public class A {
+	public static void main(String[] args) {
+		int[] age = {};
+		System.out.println(age.length);
+		
+		int[] y = new int[0];
+		System.out.println(y.length);
+		
+	}
+}
+
+Example 10: Dynamic array, size increases or decreases depending on values stored.
+Note: Create dynamic arrays using ArrayList(Will discuss latter)
+------------------------------------------------------------------------------
+public class A {
+	public static void main(String[] args) {
+		int[] age = {10,11,12};
+		System.out.println(age.length);
+		for(int x:age) {
+			System.out.println(x);
+		}
+	
+	}
+}
+
+Example 11: ArrayIndexOutOfBoundsException
+-> When we exceed the size of array while reading / writing values
+--------------------------------------------------------------------
+
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[2];
+		age[0] = 10;
+		age[1] = 20;
+		age[2] = 30;
+		
+	}
+}
+
+Example 12:ArrayIndexOutOfBoundsException
+-----------------------------------------------
+
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[2];
+		age[0] = 10;
+		age[1] = 20;
+		
+		for(int i=0;i<3;i++) {//i=0 to 2
+			System.out.println(age[i]);
+		}
+		
+	}
+}
+
+Example 13: Removing duplicate elements from an array
+-----------------------------------------------------
+-> Array "x" should be sorted
+-> Create an array called "temp" which should be same size of array "x"
+-> Compare i with i+1, if not equal then copy the value to temp at index j from index i & increment j by 1
+-> When you reach last index of array "x" then copy that value as it is to j
+
+
+
+
+
 
 
 
