@@ -627,6 +627,81 @@ Example 13: Removing duplicate elements from an array
 -> Compare i with i+1, if not equal then copy the value to temp at index j from index i & increment j by 1
 -> When you reach last index of array "x" then copy that value as it is to j
 
+public class A {
+	public static void main(String[] args) {
+		//-> Array "x" should be sorted
+		int[] x = {2,2,3,4,5,6,6,7};
+		//-> Create an array called "temp" which should 
+		//be same size of array "x"
+		int[] temp = new int[x.length];
+		//-> Compare i with i+1, 
+		//if not equal then copy the 
+		//value to temp at index j from index i & increment j by 1
+		int j=0;
+		for(int i=0;i<x.length-1;i++) {//i=0 to 5
+			if(x[i]!=x[i+1]) {
+				temp[j] = x[i];
+				j++;
+			}
+		}
+		//-> When you reach last index of array "x" 
+		//then copy that value as it is to j
+		temp[j] = x[x.length-1];
+		
+		for(int t:temp) {
+			System.out.println(t);
+		}
+		
+		
+	}
+}
+
+Example 14: Sorting an array in java
+------------------------------------
+-> We comparing i with i+1, when value at index "i" is greater than "i+1", then swap the element
+-> Repeat the above step for array_size-1 times
+
+How to swap elements in java
+-----------------------------
+public class A {
+	public static void main(String[] args) {
+		int x = 10;
+		int y = 20;
+		int temp = x;
+		x=y;
+		y=temp;
+		System.out.println(x);
+		System.out.println(y);
+	}
+}
+
+How to sort elements in an array?
+--------------------------------------------------
+public class A {
+	public static void main(String[] args) {
+		int[] x = {32,14,24,36,5};
+		int temp;
+		for(int j=0;j<x.length-1;j++) {//i=0 to 4
+			for(int i=0;i<x.length-1;i++) {//i=0 to 4
+				if(x[i]>x[i+1]) {
+					temp=x[i];
+					x[i] = x[i+1];
+					x[i+1] = temp;
+				}
+			}
+		}
+		for(int t:x) {
+			System.out.println(t);
+		}
+	}
+}
+
+
+
+
+
+
+
 
 
 
