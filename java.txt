@@ -1,0 +1,515 @@
+Advantages of interfaces
+---------------------------
+
+
+1. abstraction: hiding of implementation details. That is we define what needs to be developed and not how it needs to be developed
+2. It imposes contract on a class to implement all methods of an interface
+3. Results in good design
+4. loosely coupled
+
+Can we define incomplete static methods in an interface?
+-------------------------------------------------------
+-> Static memebers in java are not inherited
+-> We cannot define incomplete static methods inside an interface
+
+Java 8 Features
+----------------
+
+1. default keyword:
+-> Using default keyword we can create complete methods inside interface. This was introduced in java version 8
+
+
+2. Functional Interface:
+
+-> A functional interface should consist of exactly one incomplete method inside it
+-> Inside functional interface we can develop any number of complete methods using default keyword
+-> During inheritance/multiple inheritance if more than one method is inherited to Functional Interface then you will get error. As shown in below examples 
+
+Note:
+What are marker interfaces in java?
+-> Empty interfaces in java are called as marker interface
+
+3. lambdas expression - 
+
+-> It was introduced in java 8
+-> Reduces number of lines of code
+-> Works with functional interfaces
+-> We can use lambdas expression in stream
+
+How Lambdas Expression Works
+
+Note: Fuctional Programming defines you say "what you want, not how to do it step-by-step"
+
+-> Its creates Annonymous class behind the scene. A class without any name is called Annonymous .
+-> Then lambdas expression creates an object and load the method by implementing inside object.
+-> Then we use object reference to call that implemented method
+
+
+Abstract class in java
+----------------------------
+-> In an abstract class we can create both static / non static members
+-> We can create both complete / incomplete non static methods
+-> We cannot create static incomplete methods here but we can create complete static methods
+-> We cannot create object of abstract class because abstract class can consist of incomplete methods
+-> We cannot perform multiple inheritance
+
+Exception Handling In Java
+-------------------------------
+
+-> Unexpected events are called exceptions.
+-> Exceptions will hault your program execution.
+-> Exceptions will Occur when bad user input is given
+
+Example:
+
+public class A {
+	public static void main(String[] args) {
+		int x = 10;
+		int y = 0;
+		int z = x/y;//---->will stop here
+		System.out.println("Welcome");
+	}
+}
+
+-> We handle exception in java using a try & catch block
+-> When exception occurs try block will create Exception object & that Object address it will give it to catch block
+-> Catch block will handle the exception so that further code will continue to execute
+
+Example:
+
+public class A {
+	public static void main(String[] args) {
+		try {
+			int x = 10;
+			int y = 0;
+			int z = x/y;//---->will stop here
+		} catch (Exception e) {
+			
+		}
+		System.out.println("Welcome");
+	}
+}
+
+Example:
+
+public class A {
+	public static void main(String[] args) {
+		try {
+			int x = 10;
+			int y = 0;
+			int z = x/y;//---->will stop here
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		System.out.println("Welcome");
+	}
+}
+
+Types of Exception in java
+##########################
+
+There are two types of exception in java
+
+a. Compiletime / Checked Exception - These Exception will occur when .java file is compile to .class file. That is during compilation we will get this exception
+
+b. Runtime / Unchecked Exception - These Exception will occur when we run .class file. That is during runtime
+
+###############################
+Runtime / unchecked Exceptions
+###############################
+
+1. ArithmeticException: This exception will occur when invalid mathematical operations are performed
+
+Example: /ZERO
+
+public class A {
+	public static void main(String[] args) {
+		try {
+			int x = 10;
+			int y = 0;
+			int z = x/y;
+			System.out.println(z);
+		} catch (ArithmeticException a) {
+			a.printStackTrace();
+		}
+		System.out.println("Welcome");
+	}
+}
+
+Example: %ZERO
+
+public class A {
+	public static void main(String[] args) {
+		try {
+			int x = 11;
+			int y = 0;
+			int z = x%y;
+			System.out.println(z);
+		} catch (ArithmeticException a) {
+			a.printStackTrace();
+		}
+		System.out.println("Welcome");
+	}
+}
+
+
+2. Null PointerException: This exception will occur when with null reference variable we try to access non static members of the class
+
+Example:
+public class A {
+	int x = 10;
+	public static void main(String[] args) {
+		try {
+			A a1 = null;
+			System.out.println(a1.x);
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Welcome");
+	}
+}
+
+Note: You won't get this exception if you try to access a static member using a null reference:
+
+Example:
+public class A {
+	static int x = 10;
+	public static void main(String[] args) {
+		
+			A a1 = null;
+			System.out.println(a1.x);//A.x
+		
+	}
+}
+
+Output: 10
+
+3. NumberFormatException: This exception will occur when invalid conversion to a number is performed
+
+Note:
+
+Primitive    bWrapper Class
+byte		Byte
+short		Short
+int		Integer
+long		Long
+float		Float
+double		Double
+char		Character
+
+Example 1: I want to convert String to Integer
+
+public class A {
+	public static void main(String[] args) {
+		String x = "100";
+		int  y = Integer.parseInt(x);
+		System.out.println(y);
+	}
+}
+
+Example 2:I want to convert String to Float
+
+public class A {
+	public static void main(String[] args) {
+		String x = "10.3";
+		float  y = Float.parseFloat(x);
+		System.out.println(y);
+	}
+}
+
+Example 3:I want to convert String to Double
+
+public class A {
+	public static void main(String[] args) {
+		String x = "10.3";
+		double  y = Double.parseDouble(x);
+		System.out.println(y);
+		
+	}
+}
+
+Example: 4
+----------
+public class A {
+	public static void main(String[] args) {
+		try {
+			String x = "10.3dasdsd";
+			double  y = Double.parseDouble(x);
+			System.out.println(y);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Welcome");
+		
+	}
+}
+
+
+
+What is class upcasting?
+
+-> Here we store child class object address into parent class reference variable, so that reference vle becomes re-usable
+
+Example: Reusing reference variable
+
+public class A {
+	
+}
+
+public class B extends A{
+
+}
+
+public class C extends A{
+	public static void main(String[] args) {
+				
+		A a1 = new B();
+		System.out.println(a1);
+		a1 = new C();
+		System.out.println(a1);
+	}
+}
+
+Example 2: How we can implement polymorphism for multiple child classes by using same reference variable
+
+public class A {
+	void display() {
+        System.out.println("Inside class A");
+    }
+}
+
+public class B extends A{
+	 @Override
+	    void display() {
+	        System.out.println("Inside class B");
+	    }
+}
+
+public class C extends A{
+	  @Override
+	    void display() {
+	        System.out.println("Inside class C");
+	    }
+	public static void main(String[] args) {
+				
+		A a1 = new B();
+		a1.display();    // Calls B's version => "Inside class B"
+		a1 = new C();
+		a1.display();    // Calls C's version => "Inside class C"
+	}
+}
+
+Note:
+
+🧠 Why do we do it?
+1. To reuse the parent class reference for multiple child class objects.
+2. To enable polymorphism on mulitple child classes.
+3. To write generic, flexible code that works with different subclasses.
+
+
+
+Note:
+instanceof - It will check which class object address is present inside the reference variable
+
+Example:
+
+public class A {
+	
+}
+
+public class B extends A{
+	
+}
+
+public class C extends A{
+	 
+	public static void main(String[] args) {
+				
+	  A a1 = new C();
+	  System.out.println(a1 instanceof B);
+	}
+}
+
+What is class downcasting?
+##########################
+-> Here we store parent class object address into child class reference variable
+-> To perform downcasting, firstly do upcasting and then perform downcasting
+Example:
+---------
+public class A {
+	
+}
+public class B extends A{
+	
+}
+public class C extends A{
+	 
+	public static void main(String[] args) {
+		
+		A a1 = new B();
+		if(a1 instanceof B) {
+			B b1 = (B)a1;
+			System.out.println("Downcasting successful!");
+		}
+	}
+}
+
+Example:
+--------
+public class A {
+	public void display() {
+		System.out.println("Inside class A");
+	}
+}
+public class B extends A{
+	public void showB() {
+        System.out.println("Inside class B");
+        }
+}
+public class C extends A {
+	public void showC() {
+		System.out.println("Inside class C");
+	}
+}
+public class MainClass {
+	public static void processObject(A obj) {
+        if (obj instanceof B) {
+            B b = (B) obj;  // Downcasting to B
+            b.showB();
+        } else if (obj instanceof C) {
+            C c = (C) obj;  // Downcasting to C
+            c.showC();
+        } else {
+            obj.display();
+        }
+    }
+    public static void main(String[] args) {
+    	processObject(new B());
+	}
+}
+
+Note:
+-Using upcasting we can access only parent class members, you cannot access child class members
+-After upcating to access child class members we have to perform downcasting
+
+Example:
+public class A {
+	public void displayA() {
+		System.out.println("From A");
+	}
+}
+public class B extends A{
+	public void displayB() {
+		System.out.println("From B");
+	}
+	
+	 public static void main(String[] args) {
+	        A obj = new B();  // Upcasting B to A
+
+	        obj.displayA();   // Allowed: method from A
+	        //obj.displayB(); // ❌ Not allowed: method from B not visible
+
+	        // To call displayB, you'd need to downcast:
+	      ((B)obj).displayB(); // ✅ Now displayB() is accessible
+	    }
+}
+
+Arrays in java:
+###############
+-> In java arrays holds collection of value
+-> Anything that holds colection of values is called as a data struture
+-> Array in java is treated as an object
+-> Arrays starts with index zero
+-> To store and read values we use this formula in arrays - start_address + index*memory_size
+-> Memory allocation happens to be in sequence(Continuous).
+
+Example:
+public class A {
+	public static void main(String[] args) {
+		int[] age = new int[4];
+		age[0] = 10;
+		age[1] = 20;
+		age[2] = 30;
+		age[3] = 40;
+		
+		System.out.println(age[0]);
+		System.out.println(age[1]);
+		System.out.println(age[2]);
+		System.out.println(age[3]);
+		
+		
+	}
+}
+
+-> To find size of an array dynamically we will use  public final field "length". When array is created this variable will get initiliazed
+Example : age.length
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
