@@ -696,8 +696,66 @@ public class A {
 	}
 }
 
+Scanner Class in java
+#####################
+-> These classes takes user inputs
 
+a. next() - Reads string input. Reads only one work
+public class A {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter your name:");
+		String name = scan.next();
+		System.out.println(name);
+	}
+}
+b.nextInt() - Reads integer input.
+public class A {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter your age:");
+		int age = scan.nextInt();
+		System.out.println(age);
+	}
+}
 
+c. nextFloat() - Reads float value
+public class A {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter your weight:");
+		float weight = scan.nextFloat();
+		System.out.println(weight);
+	}
+}
+
+d. nextLong() - Reads long value
+public class A {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter your Mobile:");
+		long mobile = scan.nextLong();
+		System.out.println(mobile);
+	}
+}
+e. nextLine() - Reads more than one string value
+public class A {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter your name:");
+		String name = scan.nextLine();
+		System.out.println(name);
+	}
+}
+f. nextBoolean() - Reads boolean value.
+public class A {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter your ans:");
+		Boolean ans = scan.nextBoolean();
+		System.out.println(ans);
+	}
+}
 
 
 
