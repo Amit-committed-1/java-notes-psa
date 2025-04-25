@@ -757,6 +757,95 @@ public class A {
 	}
 }
 
+#############
+Loops Concept
+#############
+a. for loop
+b. while loop
+c. do while loop
+
+note: 
+1. To exit for loop we use break keyword
+2. We can use break keyword only inside loops and switch case
+
+a. for loop
+-----------
+-> When number of iterations are fixed use for loop
+
+public class A {
+	public static void main(String[] args) {
+		Scanner scan  = new Scanner(System.in);
+		
+		for (int i = 0; i < 3; i++) {//i=0 to 2--> 3 times
+			System.out.println("Enter the pin number");
+			int pinNumber = scan.nextInt();
+			if(pinNumber==1234) {
+				System.out.println("Welcome");
+				break;
+			}else {
+				System.out.println("Invalid pin number");
+				if(i==2) {
+					System.out.println("Card is blocked");
+				}
+			}
+		}
+		
+	}
+}
+
+b. while loop
+-------------
+-> To be used when number of iterations are not defined
+Example 1: 
+public class A {
+	public static void main(String[] args) {
+		int i=0;
+		while(i<3) {
+			System.out.println(i);
+			i++;
+		}
+		
+	}
+}
+
+Example 2:
+----------
+
+public class A {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String cdn="yes";
+		while(cdn.equals("yes")) {
+			System.out.println("Enter the amount:");
+			int amount = scan.nextInt();
+			System.out.println("Please collect Rs. "+amount);
+			System.out.println("Do you want to continue(yes/no)?");
+			cdn = scan.next();
+		}
+		scan.close();
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
