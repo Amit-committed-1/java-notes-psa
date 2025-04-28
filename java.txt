@@ -827,6 +827,92 @@ public class A {
 	}
 }
 
+3. do-while loo
+->In Do while loop first execution will happen without condition check. Second iteration depends on the condition
+Example:
+public class A {
+	public static void main(String[] args) {
+		int i=0;
+		do {
+			System.out.println(i);
+			i++;
+		}while(i<3);
+		
+	}
+}
+
+Conditional Statements
+##########################
+1. if() -> Will execute for true condition
+2. if() - else -> for true condition if will execute & for false condition else will execute
+3. elseif()->
+1. Both if and else if will execute for true condition
+public class A {
+	public static void main(String[] args) {
+		int i=10;
+		if(i<35 && i>=0) {
+			System.out.println("Failed");
+		}else if(i>=35 && i<=100) {
+			System.out.println("Pass");
+		}else if(i==0) {
+			System.out.println("Input given is ZERO");
+		}else {
+			System.out.println("Invalid input");
+		}
+		
+	}
+}
+Note: OR (||) Operator Example
+public class A {
+	public static void main(String[] args) {
+		int i=0;
+		if(i<35 || i>=0) {
+			System.out.println("Failed");
+		}
+		
+	}
+}
+Note: ! - Not Operator in Java
+public class A {
+	public static void main(String[] args) {
+		int i=-1;
+		
+		if(!(i>=0)) {
+			System.out.println("Failed");
+		}
+	}
+}
+
+Swicth Case Example:
+#########################
+public class A {
+	public static void main(String[] args) {
+		int key=20;
+		switch (key) {
+		case 1:
+			System.out.println(1);
+			break;
+		case 2:
+			System.out.println(2);
+			break;
+		case 3:
+			System.out.println(3);
+			break;
+
+		default:
+			System.out.println("Default");
+			break;
+		}
+	}
+}
+
+
+
+
+
+
+
+
 
 
 
