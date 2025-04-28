@@ -906,6 +906,33 @@ public class A {
 	}
 }
 
+File Handling in Java
+#######################
+
+1. File
+-----------
+Note: Special Characters
+               System.out.print(200);
+		System.out.print("\n");
+		System.out.print(300);
+		System.out.print("\n");
+		System.out.print(200);
+		System.out.print("\t");
+		System.out.print(300);
+
+Example 1:It holds the given path in variable "f"
+----------------------------------------------------
+File f = new File("G:\\f1\\t1.txt");
+System.out.println(f);
+
+
+2. FileReader
+3. FileWriter
+4. BufferedReader
+5. BufferedWriter
+6. FileInputStream
+7. FileOutputStream
+
 
 
 
