@@ -925,6 +925,72 @@ Example 1:It holds the given path in variable "f"
 File f = new File("G:\\f1\\t1.txt");
 System.out.println(f);
 
+1. exists() - 
+------------
+a. It is a non static method present inside File class
+b. Return type of this method is boolean
+c. It checks whether the file exists in the given path.
+d. If file exists, it will return true or else false
+Example:
+---------
+public class A {
+	public static void main(String[] args) {
+		File f = new File("G://f1//t2.txt");
+		boolean val = f.exists();
+		System.out.println(val);
+	}
+}
+
+2. delete() - 
+------------
+a. It is a non static method present inside File class
+b. Return type of this method is boolean
+c. It deletes the file exists in the given path.
+d. If file is deleted, it will return true or else false
+
+Example:
+--------
+public class A {
+	public static void main(String[] args) {
+		File f = new File("G://f1//t1.txt");
+		boolean val = f.delete();
+		System.out.println(val);
+	}
+}
+
+3.mkdir() - 
+------------
+a. It is a non static method present inside File class
+b. Return type of this method is boolean
+c. It creates folder  in the given path.
+d. If folder is created, it will return true or else false
+e. It will not replace existing folder
+
+Example:
+--------
+public class A {
+	public static void main(String[] args) {
+		File f = new File("G://f1//t1");
+		boolean val = f.mkdir();
+		System.out.println(val);
+	}
+}
+
+Example: To delete Folder using delete() method
+------------------------------------------------
+public class A {
+	public static void main(String[] args) {
+		File f = new File("G://f1//t1");
+		boolean val = f.delete();
+		System.out.println(val);
+	}
+}
+
+
+
+
+
+
 
 2. FileReader
 3. FileWriter
