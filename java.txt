@@ -1001,12 +1001,106 @@ public class A {
 	}
 }
 
+Note:
+Compiletime Exception/ Checkedc Exception
+_____________________________________________
+-> These exceptions will occur even when the program is correct/Incorrect
+-> Handling exception becomes mandatory when it is compile time
+
+5. createNewFile()-
+-------------------
+a. It is non static method present inside File Class
+b. It's return type is boolean
+c. It Throws Compiletime exception. So should be handled before executing the program
+d. If file is created, it will return true or else false
+
+Example:
+--------
+public class A {
+	public static void main(String[] args) {
+		try {
+			File f = new File("G://f1//t3.txt");
+			boolean val = f.createNewFile();
+			System.out.println(val);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+6. list()-
+-------------------
+a. It is non static method present inside File Class
+b. It's return type is String[] array
+c. It get all files/folders names from a given path
+
+Example:
+--------
+public class A {
+	public static void main(String[] args) {
+		
+		    File f = new File("G://f1//");
+		    String[] val = f.list();
+		    
+		    for(String x:val) {
+		    	System.out.println(x);
+		    }
+		    System.out.println(val.length);
+	}
+}
+
+Note: Using "File" class we cannot read / write content From / To text file
+
+2. FileReader:
+#######################
+-> It can read text file content
+a. read(): int
+---------------
+-> it will read one charater from the file and return integer value:
+Example:
+---------
+public class A {
+	public static void main(String[] args) {
+		try {
+			 FileReader fr = new FileReader("G:\\f1\\t1.txt");
+			 int x = fr.read();
+			 System.out.println((char)x);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+Example:
+---------
+public class A {
+	public static void main(String[] args) {
+		try {
+			 FileReader fr = new FileReader("G:\\f1\\t1.txt");
+			 for(int i=0;i<4;i++) {
+				 System.out.print((char)fr.read());
+			 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
 
 
 
 
 
-2. FileReader
+
+
+
+
+
+
+
+
+
+
+
+
 3. FileWriter
 4. BufferedReader
 5. BufferedWriter
