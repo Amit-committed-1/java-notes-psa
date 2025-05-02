@@ -1085,6 +1085,75 @@ public class A {
 	}
 }
 
+Example:
+-----------
+public class A {
+	public static void main(String[] args) {
+		try {
+			 File f = new File("G:\\f1\\t1.txt");
+			 FileReader fr = new FileReader(f);
+			 for(int i=0;i<f.length();i++) {
+				 System.out.print((char)fr.read());
+			 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+Example:
+--------
+public class A {
+	public static void main(String[] args) {
+		try {
+			 File f = new File("G:\\f1\\t1.txt");
+			 FileReader fr = new FileReader(f);
+			 char[] ch = new char[(int)f.length()];
+			 fr.read(ch);
+			 
+			 for(char c:ch) {
+				 System.out.print(c);
+			 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+#####################
+FileWriter class
+#####################
+1. It will write content to text file
+2. If File is not present in given path, it will create a new file
+3. If the file is present in the given path, then it will replace the existing file by default
+
+Example: 
+--------
+import java.io.FileWriter;
+public class A {
+	public static void main(String[] args) {
+		try {
+			FileWriter fw = new FileWriter("G://f1//t1.txt");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+Note: If you donot want to replace old file with new file, and you want to append data to existing file then add boolean value true
+Example:
+---------
+public class A {
+	public static void main(String[] args) {
+		try {
+			FileWriter fw = new FileWriter("G://f1//t1.txt",true);
+// If you make it false/donot provide boolean value then it will replace old file with new one //and data from previous file will be lost
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
 
 
 
