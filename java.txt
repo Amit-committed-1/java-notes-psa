@@ -1208,6 +1208,7 @@ BufferedReader
 #######################
 1. This will improve file reading performance
 2. This should be used with FileReader class, If we use only BufferedReader then FileReading cannot be done
+3. It has readLine() method. Using this method we can read the entire line from the file
 Example:
 --------
 import java.io.BufferedReader;
@@ -1244,6 +1245,59 @@ public class A {
 		}
 	}
 }
+Example:
+--------
+import java.io.BufferedReader;
+import java.io.FileReader;
+public class A {
+	public static void main(String[] args) {
+		try {
+			FileReader fr = new FileReader("G://f1//t1.txt");
+			BufferedReader br = new BufferedReader(fr);
+			for(int i=0;i<4;i++) {
+				System.out.println(br.readLine());
+			}
+			br.close();
+			fr.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+#####################
+BufferedWriter
+#####################
+-> It improves file writing performance
+-> This should be used with FileWriter class, If we use only BufferedWriter then FileWriting cannot be done
+-> BufferedWriter class has new line method
+Example:
+--------
+public class A {
+	public static void main(String[] args) {
+		try {
+			FileWriter fw = new FileWriter("G://f1//t1.txt",true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write("mike");
+			bw.newLine();
+			bw.write(97);
+			char[] ch = {'b','c','d'};
+			bw.newLine();
+			bw.write(ch);
+			
+			bw.close();
+			fw.close();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+################################
+Serialization & Deserialization
+################################
 
 
 
@@ -1256,20 +1310,6 @@ public class A {
 
 
 
-
-
-
-
-
-
-
-
-
-3. FileWriter
-4. BufferedReader
-5. BufferedWriter
-6. FileInputStream
-7. FileOutputStream
 
 
 
