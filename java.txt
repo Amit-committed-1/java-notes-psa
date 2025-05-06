@@ -1378,7 +1378,12 @@ Create table student(
 -> Insert data to table: insert into student values('mike','mike@gmail.com','9632629033')
 -> Read Table Content: Select * from student
 
+Assignment: Complete SQL Recorded Classes. Access will be given in PSA App. Nearly covered 250+ examples
 
+After Installing MySQl Workbench, We can now start with JDBC Concept
+------------------------------------------------------------------------
+-> Interacting with database using java program
+-> Download Connector File for MySql: https://dev.mysql.com/downloads/file/?id=538917
 
 
 
