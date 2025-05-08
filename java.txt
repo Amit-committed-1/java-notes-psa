@@ -1656,6 +1656,50 @@ public class E {
 }
 Output: Finally
 
+Example: Can we write only try & catch block: yes
+--------
+public class E {
+	int x = 10;
+	public static void main(String[] args) {
+		try {
+			int x = 100/0;
+		}finally {
+			System.out.println("Finally");
+		}
+		
+		System.out.println("Welcome");
+		
+	}
+}
+Output:
+Finally
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at jdbc_examples.E.main(E.java:7)
+
+Note: Can u give practical example where finally block can be used?
+Ans: 
+a. We can perform database closing operation
+b. We can peform file closing operation
+
+
+Interview Question:
+a. Difference between final versus finally versus finalize
+=============================================================
+final
+--------
+-> final makes variable contant
+-> final prevents overriding
+-> final on class stops inhertiance
+
+finally
+-------
+-> this is extension of try catch block
+-> The code that we write in finally block will run 100%, regardless of exception
+
+finalize():
+----------
+-> This is a method inside Object class and here Garbage collection logic is implemented
+-> We can try calling garbage collector using System.gc()
 
 
 
