@@ -1511,9 +1511,150 @@ public class D {
 
 }
 
+Example for Dynamic input to JDBC using Scanner class
+------------------------------------------------------
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
 
+public class A {
+	public static void main(String[] args) {
+		try {
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Enter your name:");
+			String name = scan.next();
+			System.out.println("Enter your Email:");
+			String email = scan.next();
+			System.out.println("Enter your mobile number:");
+			String mobile = scan.next();
+			
+			
+			
+			//Connect to database - use psaDB (SQL)
+			
+			Connection con = 
+					DriverManager.
+	getConnection("jdbc:mysql://localhost/psaDB","root","test");
+		
+			
+			//Write & execute SQl query
+			//
+			
+			Statement stmnt =  con.createStatement();
+			stmnt.executeUpdate("insert into student values('"+name+"','"+email+"','"+mobile+"')");
+			
+			//Close database connection
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+}
 
+Example to Delete data by giving dynamic input to JDBC
+---------------------------------------------------------
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class B {
+	public static void main(String[] args) {
+		try {
+				Scanner scan = new Scanner(System.in);
+				System.out.println("Enter your Email:");
+				String email = scan.next();
+			//Connect to database - use psaDB (SQL)
+		Connection con = 
+					DriverManager.
+	getConnection("jdbc:mysql://localhost/psaDB","root","test");
+					
+			//Write & execute SQl query
+			
+			Statement stmnt =  con.createStatement();
+			stmnt.executeUpdate("Delete from student where email='"+email+"'");
+			
+			//Close database connection
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+
+Assignment: Update recortd by giving email & mobile as dynamic input using Scanner class
+-----------------------------------------------------------------------------------------
+
+Multi catch blocks:
+---------------------
+
+-> We can create multiple catch block.
+-> Always start with child exception class followed by parent exception class
+
+Example:
+--------
+public class E {
+	int x = 10;
+	public static void main(String[] args) {
+		try {
+			Integer.parseInt("ahsjkdhas687");
+			E a1 = null;
+			System.out.println(a1.x);
+			int x = 10/0;
+		}catch (ArithmeticException e) {
+			System.out.println(1);
+		}catch (NullPointerException e) {
+			System.out.println(2);
+		}catch (Exception e) {
+			System.out.println(3);
+		}
+		
+	}
+}
+
+finally block in java
+###########################
+
+-> this is extension of try catch block
+-> The code that we write in finally block will run 100%, regardless of exception
+
+Example:
+--------
+public class E {
+	int x = 10;
+	public static void main(String[] args) {
+		try {
+			int x = 100/0;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			System.out.println("Finally");
+		}
+		
+	}
+}
+Output: Finally
+
+Example:
+--------
+public class E {
+	int x = 10;
+	public static void main(String[] args) {
+		try {
+			int x = 100/2;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			System.out.println("Finally");
+		}
+		
+	}
+}
+Output: Finally
 
 
 
